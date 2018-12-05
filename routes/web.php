@@ -20,3 +20,7 @@ Route::get('/', ['as'=>'index','uses'=>'AppController@index']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/perfil', ['as' => 'perfil', 'uses' => 'PerfilController@perfil']); 
+
+Route::post("editarPerfil", "PerfilController@editarPerfil"); 
