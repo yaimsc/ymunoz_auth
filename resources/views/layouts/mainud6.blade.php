@@ -6,7 +6,7 @@
       <title>Zubiri Manteo</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Autentification">
-      <meta name="author" content="ajuanenama">
+      <meta name="author" content="yaiza">
       <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 
       <link rel="shortcut icon" href="{{ asset("favicon.png") }}" type="image/png">

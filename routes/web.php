@@ -21,6 +21,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/perfil', ['as' => 'perfil', 'uses' => 'PerfilController@perfil']); 
+Route::get('/perfil', ['as' => 'perfil', 'uses' => 'PerfilController@perfil']);
 
-Route::post("editarPerfil", "PerfilController@editarPerfil"); 
+Route::post("/home", "PerfilController@editarPerfil")->name('perfil.edit');
+Route::post("/editView", 'PerfilController@editView')->name('perfil.editView');
+
+//Rutas CRUD Mensajes
+
+Route::get('/nuevoMensaje', 'NuevoMessageController@index')->name('nuevoMensaje');

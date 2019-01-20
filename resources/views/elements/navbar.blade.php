@@ -27,16 +27,11 @@
             <ul class="navbar-nav mr-auto">
                 <li id="initial" class="nav-item">
                     <a class="nav-link" href="#inicio">
-                        Inicio
-                    </a>
-                </li>
-                <li id="initial" class="nav-item">
-                    <a class="nav-link" href="#inicio">
                         Mensajes
                     </a>
                 </li>
                 <li id="initial" class="nav-item">
-                    <a class="nav-link" href="#inicio">
+                    <a class="nav-link" href="/nuevoMensaje">
                         Nuevo mensaje
                     </a>
                 </li>
@@ -89,7 +84,7 @@
                             </form>
                         </div>
                     </li>
-                    @endguest 
+                    @endguest
             </ul>
         </div>
     </div>
