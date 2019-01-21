@@ -31,7 +31,7 @@ class MessageController extends Controller
     //validate
     $request->validate([
       'to' => 'required|email',
-      'message' => 'required'
+      'message' => 'required',
     ]);
 
     //pillar datos del message

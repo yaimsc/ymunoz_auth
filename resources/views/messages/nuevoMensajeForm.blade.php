@@ -5,7 +5,7 @@
 <br>
 <br>
 <div class="container">
-  <form class="" action="{{route('messages.store')}}" method="post">
+  <form class="" action="{{route('messages.store')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-group row">
 			<label for="de" class="col-sm-4 col-form-label text-md-right">{{ __('De') }}</label>
@@ -34,7 +34,7 @@
     <div class="form-group row">
 			<label for="message" class="col-sm-4 col-form-label text-md-right">{{ __('Añadir Archivo') }}</label>
 			<div class="col-md-6">
-        <input type="file" name="file" value="">
+        <input type="file" name="file" class="form-control-file">
       </div>
 		</div>
     <div class="form-group row">

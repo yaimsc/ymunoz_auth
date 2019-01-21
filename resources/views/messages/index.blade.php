@@ -31,6 +31,7 @@
           <th>Para</th>
           <th>Titulo</th>
           <th>Mensaje</th>
+          <th>Archivo Adjunto</th>
           <th>Fecha/Hora</th>
           <th style="width:15px"></th>
           <th style="width:15px"></th>
@@ -43,6 +44,7 @@
          <td>{{$m->to}}</td>
          <td>{{$m->title}}</td>
          <td>{{substr($m->message, 0, 30)}}{{strlen($m->message)>30?'...':''}}</td>
+         <td>{{$m->file}}</td>
          <td>{{date("j/m/Y H:i:s", strtotime($m->created_at))}}</td>
        </tr>
        @endforeach
