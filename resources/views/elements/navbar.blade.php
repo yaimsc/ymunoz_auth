@@ -25,12 +25,12 @@
         <div class="collapse navbar-collapse" id="navbar">
 
             <ul class="navbar-nav mr-auto">
-                <li id="initial" class="nav-item">
+                <li id="initial" class="nav-item active">
                     <a class="nav-link" href="#inicio">
                         Mensajes
                     </a>
                 </li>
-                <li id="initial" class="nav-item">
+                <li id="initial" class="nav-item active">
                     <a class="nav-link" href="/nuevoMensaje">
                         Nuevo mensaje
                     </a>
