@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li id="initial" class="nav-item active">
-                    <a class="nav-link" href="/nuevoMensaje">
+                    <a class="nav-link" href="{{route('messages.create')}}">
                         Nuevo mensaje
                     </a>
                 </li>

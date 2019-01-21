@@ -27,5 +27,6 @@ Route::post("/home", "PerfilController@editarPerfil")->name('perfil.edit');
 Route::post("/editView", 'PerfilController@editView')->name('perfil.editView');
 
 //Rutas CRUD Mensajes
-
-Route::get('/nuevoMensaje', 'NuevoMessageController@index')->name('nuevoMensaje');
+Route::get('/messages/index' , 'MessageController@index')->name('messages.index');
+Route::get('/messages/create', 'MessageController@create')->name('messages.create');
+Route::post('/messages/store', 'MessageController@store')->name('messages.store');
