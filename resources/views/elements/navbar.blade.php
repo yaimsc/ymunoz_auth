@@ -26,7 +26,7 @@
 
             <ul class="navbar-nav mr-auto">
                 <li id="initial" class="nav-item active">
-                    <a class="nav-link" href="#inicio">
+                    <a class="nav-link" href="{{route('messages.index')}}">
                         Mensajes
                     </a>
                 </li>
