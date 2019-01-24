@@ -17,8 +17,10 @@ class MessageController extends Controller
   }
 
   public function index(){
-    $messages_enviados = Message::where('from', Auth::user()->email)->get();
-    $messages_recibidos = Message::where('to', Auth::user()->email)->get();
+
+    $messages_enviados = Message::where('from', Auth::user()->email)->orderBy('created_at', 'DESC')->get();
+    $messages_recibidos = Message::where('to', Auth::user()->email)->orderBy('created_at', 'DESC')->get();
+
     return view('messages.index', ['messages_enviados' => $messages_enviados,'messages_recibidos' => $messages_recibidos]);
   }
 

@@ -9,9 +9,9 @@
       <meta name="author" content="yaiza">
       <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 
-      <link rel="shortcut icon" href="{{ asset("favicon.png") }}" type="image/png">
+      <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/png">
       <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
-      <link rel="stylesheet" href="{{ url("font-awesome/css/font-awesome.min.css") }}">
+      <link rel="stylesheet" href="{{ url('font-awesome/css/font-awesome.min.css') }}">
   </head>
 
   <body>
