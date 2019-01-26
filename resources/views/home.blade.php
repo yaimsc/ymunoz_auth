@@ -15,6 +15,11 @@
                     @endif
 
                     Bienvenido {{ Auth::user()->name }}
+                    @if(Auth::user()->rol_id == 3)
+                      <div>
+                        Ya eres premium!
+                      </div>
+                    @endif
                 </div>
             </div>
         </div>

@@ -1,0 +1,41 @@
+.from, .to{
+  border-bottom: 1px solid grey;
+  padding: 5px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+label{
+  margin-right: 20px;
+}
+.titulo{
+  display: inline-flex;
+  flex-direction: row;
+  border-bottom: 1px solid grey;
+  width: 100%;
+}
+img{
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+p{
+  width: 100%;
+  height: auto;
+  -webkit-box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.43);
+  -moz-box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.43);
+  box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.43);
+  padding: 10px;
+  background-color: #d8e7ff;
+  border-radius: 10px;
+}
+.message{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.fa{
+  color: #007BFF;
+}

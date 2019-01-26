@@ -3,25 +3,21 @@
 <html lang="es">
   <head>
       <meta charset="utf-8">
-      <title>Zubiri Manteo</title>
+      <title>YaiMail</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Autentification">
       <meta name="author" content="yaiza">
       <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 
-      <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/png">
+      <link rel="icon" type="image/x-icon" href="/favicon.ico">
       <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
       <link rel="stylesheet" href="{{ url('font-awesome/css/font-awesome.min.css') }}">
   </head>
-
   <body>
-
       @include("elements.navbar")
-
-      <main class="p-0">
+      <div>
           @yield("content")
-      </main>
-
+      </div>
   </body>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

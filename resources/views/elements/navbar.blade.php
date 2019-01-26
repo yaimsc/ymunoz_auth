@@ -35,6 +35,16 @@
                         Nuevo mensaje
                     </a>
                 </li>
+                <li id="initial" class="nav-item active">
+                    <a class="nav-link" href="{{route('papelera')}}">
+                        Papelera
+                    </a>
+                </li>
+                <li id="initial" class="nav-item active">
+                    <a class="nav-link" href="{{route('premium')}}">
+                        Premium
+                    </a>
+                </li>
             </ul>
     @endguest
 

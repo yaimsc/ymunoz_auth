@@ -19,6 +19,11 @@ class RolSeeder extends Seeder
         DB::table('rols')->insert([
           'id' => 2,
           'nombre' => 'admin'
-        ]); 
+        ]);
+
+        DB::table('rols')->insert([
+          'id' => 3,
+          'nombre' => 'premium'
+        ]);
     }
 }

@@ -20,6 +20,7 @@ class CreateMessagesTable extends Migration
             $table->string('title');
             $table->string('message');
             $table->string('file');
+            $table->string('in')->default('inbox');  
             $table->timestamps();
         });
     }

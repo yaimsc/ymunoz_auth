@@ -27,6 +27,11 @@ Route::post("/home", "PerfilController@editarPerfil")->name('perfil.edit');
 Route::post("/editView", 'PerfilController@editView')->name('perfil.editView');
 
 //Rutas CRUD Mensajes
-Route::get('/messages/index' , 'MessageController@index')->name('messages.index');
-Route::get('/messages/create', 'MessageController@create')->name('messages.create');
-Route::post('/messages/store', 'MessageController@store')->name('messages.store');
+Route::resource('messages', 'MessageController');
+
+//papelera
+Route::get('papelera', 'PapeleraController@index')->name('papelera');
+
+//premium
+Route::get('premium', 'PremiumController@index')->name('premium');
+Route::post('/premium/unirse', 'PremiumController@unirse')->name('premium.unirse');

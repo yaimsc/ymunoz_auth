@@ -1,46 +1,24 @@
 @extends('layouts.mainud6')
 
 @section('content')
-<style media="screen">
-  .container{
-    display: inline-flex;
-    flex-direction: row;
-  }
-  li{
-    list-style: none;
-  }
-  li:hover{
-
-  }
-  .msg{
-    padding: 10px;
-    background-color: white;
-    color: #0085BE;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    padding-left: 30px;
-  }
-  .msgPrss{
-    padding: 10px;
-    background-color: #007BFF;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    padding-left: 30px;
-    color: white;
-  }
-</style>
+<link rel="stylesheet" href="/css/messages/index.css">
 <br>
 <br>
 <br>
 <div class="container">
-  <div class="col-md-3">
+  <div class="col-lg-3">
     <ul>
       <li onclick="getRecibidos()" class="msgPrss" id="linkRecibidos">Mensajes Recibidos</li>
       <li onclick="getEnviados()" class="msg" id="linkEnviados">Mensajes Enviados</li>
     </ul>
   </div>
-  <div class="col-md-9">
+  <div class="table-responsive">
+    @if(Session::has('papelera'))
+    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-warning') }}">
+      <div>{{ Session::get('papelera') }}</div>
+      <i id="x" class="fas fa-times"></i>
+    </div>
+    @endif
     <table class="table" id="recibidos">
       <thead>
         <tr>
@@ -62,6 +40,19 @@
          <td>{{substr($m->message, 0, 30)}}{{strlen($m->message)>30?'...':''}}</td>
          <td>{{$m->file}}</td>
          <td>{{date("j/m/Y H:i:s", strtotime($m->created_at))}}</td>
+         <td>
+           <a id="show" href="{{route ('messages.show',$m->id)}}">
+             <i class="fa fa-eye"></i>
+             <label>Ver</label>
+           </a>
+           <form action="{{ route('messages.destroy',$m->id) }}" method="POST">
+           {{ method_field('DELETE') }}
+           @csrf
+           <button type="submit" id="delete">
+              <i class="fa fa-trash-o"></i><label>Borrar</label>
+            </button>
+          </form>
+         </td>
        </tr>
        @endforeach
      </tbody>
@@ -87,6 +78,19 @@
          <td>{{substr($m->message, 0, 30)}}{{strlen($m->message)>30?'...':''}}</td>
          <td>{{$m->file}}</td>
          <td>{{date("j/m/Y H:i:s", strtotime($m->created_at))}}</td>
+         <td>
+           <a id="show" href="{{route ('messages.show',$m->id)}}">
+             <i class="fa fa-eye"></i>
+             <label>Ver</label>
+           </a>
+           <form action="{{ route('messages.destroy',$m->id) }}" method="POST">
+           {{ method_field('DELETE') }}
+           @csrf
+           <button type="submit" id="delete">
+              <i class="fa fa-trash-o"></i><label>Borrar</label>
+            </button>
+          </form>
+         </td>
        </tr>
        @endforeach
      </tbody>
