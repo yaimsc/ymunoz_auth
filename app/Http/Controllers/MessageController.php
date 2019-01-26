@@ -125,8 +125,6 @@ class MessageController extends Controller
       $messagePapelera->in = $papelera;
       $messagePapelera->save();
       return back()->with('papelera', 'Se ha borrado el mensaje de la entrada. Lo encontrará en la papelera.');
-      // return back()->with('borrado', 'Se ha borrado el mensaje correctamente.');
       return redirect()->action('PapeleraController@index');
-      // return redirect()->route('papelera', ['$messagePapelera' => $messagePapelera]);
     }
 }

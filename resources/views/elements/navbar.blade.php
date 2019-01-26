@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li id="initial" class="nav-item active">
-                    <a class="nav-link" href="{{route('papelera')}}">
+                    <a class="nav-link" href="{{route('papelera.index')}}">
                         Papelera
                     </a>
                 </li>

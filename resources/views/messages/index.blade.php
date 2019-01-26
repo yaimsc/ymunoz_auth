@@ -14,9 +14,8 @@
   </div>
   <div class="table-responsive">
     @if(Session::has('papelera'))
-    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-warning') }}">
+    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-warning') }} alert-dismissible fade show">
       <div>{{ Session::get('papelera') }}</div>
-      <i id="x" class="fas fa-times"></i>
     </div>
     @endif
     <table class="table" id="recibidos">
@@ -48,9 +47,9 @@
            <form action="{{ route('messages.destroy',$m->id) }}" method="POST">
            {{ method_field('DELETE') }}
            @csrf
-           <button type="submit" id="delete">
+           <input type="submit" id="delete">
               <i class="fa fa-trash-o"></i><label>Borrar</label>
-            </button>
+            </input>
           </form>
          </td>
        </tr>

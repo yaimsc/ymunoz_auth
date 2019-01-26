@@ -8,6 +8,11 @@
 <br>
 <div class="container">
   <div class="table-responsive">
+    @if(Session::has('borrado'))
+    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-danger') }} alert-dismissible fade show">
+      <div>{{ Session::get('borrado') }}</div>
+    </div>
+    @endif
     <table class="table">
       <thead>
         <th>Para</th>
@@ -26,9 +31,9 @@
           <td>{{$m->file}}</td>
           <td>{{date("j/m/Y H:i:s", strtotime($m->created_at))}}</td>
           <td>
-            <form action="{{ route('messages.destroy',$m->id) }}" method="POST">
-            {{ method_field('DELETE') }}
-            @csrf
+            <form action="{{ route('papelera.delete',$m->id) }}" method="post">
+              {{ method_field('DELETE') }}
+              @csrf
             <button type="submit" id="delete">
                <i class="fa fa-trash-o"></i><label>Borrar</label>
              </button>
