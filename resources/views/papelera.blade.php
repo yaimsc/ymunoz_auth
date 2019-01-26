@@ -31,7 +31,7 @@
           <td>{{$m->file}}</td>
           <td>{{date("j/m/Y H:i:s", strtotime($m->created_at))}}</td>
           <td>
-            <form action="{{ route('papelera.delete',$m->id) }}" method="post">
+            <form action="{{ route('papelera.destroy',$m->id) }}" method="post">
               {{ method_field('DELETE') }}
               @csrf
             <button type="submit" id="delete">

@@ -30,8 +30,7 @@ Route::post("/editView", 'PerfilController@editView')->name('perfil.editView');
 Route::resource('messages', 'MessageController');
 
 //papelera
-Route::get('/papelera', 'PapeleraController@index')->name('papelera.index');
-Route::post('/papelera/destroy', 'PapeleraController@delete')->name('papelera.delete'); 
+Route::resource('papelera', 'PapeleraController'); 
 
 //premium
 Route::get('/premium', 'PremiumController@index')->name('premium');
