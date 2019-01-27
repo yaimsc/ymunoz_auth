@@ -12,8 +12,9 @@ class PerfilController extends Controller
         $this->middleware('auth');
     }
 
-    public function perfil(){
-    	return view ('perfil');
+    public function perfil(Request $request){
+      $cookie = $request->cookie('cookieyaiza');
+    	return view ('perfil', ['cookie' => $cookie]);
     }
 
     public function editView(){

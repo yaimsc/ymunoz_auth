@@ -41,7 +41,7 @@
       </div>
 		</div>
     <div class="form-group row">
-			<label for="message" class="col-sm-4 col-form-label text-md-right">{{ __('Añadir Archivo') }}</label>
+			<label for="file" class="col-sm-4 col-form-label text-md-right">{{ __('Añadir Archivo') }}</label>
 			<div class="col-md-6">
         <input type="file" name="file" class="form-control-file">
       </div>

@@ -10,7 +10,7 @@
 		<div class="form-group row">
 			<label for="name" class="col-sm-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 			<div class="col-md-6">
-                <input id="text" type="text" class="form-control" name="name" value="{{ Auth::user()->name }}" required autofocus disabled>
+                <input id="text" type="text" class="form-control" name="name" value="{{ $cookie }}" required autofocus disabled>
             </div>
 		</div>
 		<div class="form-group row">

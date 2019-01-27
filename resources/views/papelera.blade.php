@@ -3,14 +3,34 @@
 @section('content')
 
 <link rel="stylesheet" href="/css/messages/index.css">
+<style media="screen">
+  button[type=submit]{
+    background-color: #ff7272;
+    color: white;
+    width: 90px;
+    padding: 8px;
+    margin: 5px;
+    margin-left: 20px;
+    -webkit-box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.43);
+    -moz-box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.43);
+    box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.43);
+    border: none;
+    cursor: pointer;
+  }
+</style>
 <br>
 <br>
 <br>
 <div class="container">
   <div class="table-responsive">
     @if(Session::has('borrado'))
-    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-danger') }} alert-dismissible fade show">
+    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-danger') }}" class="alert-dismissible fade show">
       <div>{{ Session::get('borrado') }}</div>
+    </div>
+    @endif
+    @if(Session::has('borradoTotal'))
+    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-danger') }}" class="alert-dismissible fade show">
+      <div>{{ Session::get('borradoTotal') }}</div>
     </div>
     @endif
     <table class="table">
@@ -44,4 +64,10 @@
       </tbody>
     </table>
   </div>
+  <form action="{{ route('papelera.deleteall') }}" method="post">
+    @csrf
+  <button type="submit">
+     <i class="fa fa-trash-o"></i><label>Borrar todos los mensajes</label>
+   </button>
+  </form>
 </div>

@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary" id="mainNavbar">
     @guest
-    <a class="navbar-brand" href="{{route('index')}}">AUTH</a>
+    <a class="navbar-brand" href="{{route('login')}}">AUTH</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,14 +17,20 @@
                 </li>
             </ul>
     @else
-    <a class="navbar-brand" href="{{route('index')}}">USER</a>
+    <a class="navbar-brand" href="{{route('home')}}">USER</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
     </button>
 
         <div class="collapse navbar-collapse" id="navbar">
-
             <ul class="navbar-nav mr-auto">
+              @if(Auth::user()->rol_id == 2)
+              <li id="initial" class="nav-item active">
+                  <a class="nav-link" href="{{route('admin.index')}}">
+                      Panel Administrador
+                  </a>
+              </li>
+              @else
                 <li id="initial" class="nav-item active">
                     <a class="nav-link" href="{{route('messages.index')}}">
                         Mensajes
@@ -45,12 +51,13 @@
                         Premium
                     </a>
                 </li>
+                @endif
             </ul>
     @endguest
 
 
             <ul class="navbar-nav navbar-right ">
-                    <li class="nav-item dropdown active">
+                    <!-- <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-flag"></i>
                         Idioma
@@ -59,7 +66,7 @@
                         <a class="dropdown-item" href="#">Euskara</a>
                         <a class="dropdown-item active" href="#">Castellano</a>
                       </div>
-                    </li>
+                    </li> -->
                     @guest
                         <li class="nav-item active">
                             <a class="nav-link" href="{{route('login')}}" data-target="#loginModal">

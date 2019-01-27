@@ -47,9 +47,9 @@
            <form action="{{ route('messages.destroy',$m->id) }}" method="POST">
            {{ method_field('DELETE') }}
            @csrf
-           <input type="submit" id="delete">
+           <button type="submit" id="delete">
               <i class="fa fa-trash-o"></i><label>Borrar</label>
-            </input>
+            </button>
           </form>
          </td>
        </tr>

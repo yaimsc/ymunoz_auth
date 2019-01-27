@@ -11,6 +11,6 @@ class Message extends Model
     }
 
     public function from(){
-      return $this->belongsTO('App\User','from','id');
+      return $this->belongsTo('App\User','from','id');
     }
 }

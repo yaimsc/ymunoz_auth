@@ -22,8 +22,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-      $messages_enviados = Message::where('from', Auth::user()->email)->orderBy('created_at', 'DESC')->get();
-      $messages_recibidos = Message::where('to', Auth::user()->email)->orderBy('created_at', 'DESC')->get();
+      $messages_enviados = Message::where('from', Auth::user()->email)->where('in' , 'inbox')->orderBy('created_at', 'DESC')->get();
+      $messages_recibidos = Message::where('to', Auth::user()->email)->where('in', 'inbox')->orderBy('created_at', 'DESC')->get();
       return view ('messages.index', ['messages_enviados' => $messages_enviados,'messages_recibidos' => $messages_recibidos]);
     }
 
@@ -49,14 +49,23 @@ class MessageController extends Controller
   //validate
   $request->validate([
     'to' => 'required|email',
-    'message' => 'required',
   ]);
   //pillar datos del message
   $message = new Message;
   $message->from = Auth::user()->email;
   $message->to = $request->input('to');
-  $message->title = $request->input('title');
-  $message->message = $request->input('message');
+  $title = $request->input('title');
+  $texto = $request->input('message');
+  if($title == ''){
+    $message->title = 'Sin titulo';
+  }else{
+    $message->title = $title;
+  }
+  if($texto == ''){
+    $message->message = 'Sin mensaje';
+  }else{
+    $message->message = $texto;
+  }
   $file = $request->file('file');
   if($file == ''){
      $message->file = 'No hay archivo adjunto';

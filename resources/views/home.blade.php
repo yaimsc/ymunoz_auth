@@ -19,6 +19,10 @@
                       <div>
                         Ya eres premium!
                       </div>
+                    @elseif(Auth::user()->rol_id == 2)
+                      <div>
+                        Eres Adminstrador!
+                      </div>
                     @endif
                 </div>
             </div>

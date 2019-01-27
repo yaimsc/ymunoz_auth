@@ -19,6 +19,31 @@ class PapeleraController extends Controller
     }
 
     /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+      $messagePapelera = Message::where('id', $id)->delete();
+      return back()->with('borrado', 'Se ha borrado el mensaje definitivamente.');
+      return redirect()->route('papelera.index');
+    }
+
+    /*
+    Remove all $messagesPapelera
+    *
+    */
+
+    public function deleteall(){
+      $messagesPapelera = Message::where('in', 'papelera')->delete();
+      return back()->with('borradoTotal', 'Se han borrado todos los mensajes de la papelera.'); 
+      return redirect()->route('papelera.index');
+
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -71,18 +96,5 @@ class PapeleraController extends Controller
     public function update(Request $request, $id)
     {
         //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-      $messagePapelera = Message::where('id', $id)->delete();
-      return back()->with('borrado', 'Se ha borrado el mensaje definitivamente.');
-      return redirect()->route('papelera.index');
     }
 }

@@ -17,10 +17,10 @@ class CreateMessagesTable extends Migration
           $table->increments('id');
             $table->string('from');
             $table->string('to');
-            $table->string('title');
-            $table->string('message');
+            $table->string('title')->nullable();
+            $table->string('message')->nullable();
             $table->string('file');
-            $table->string('in')->default('inbox');  
+            $table->string('in')->default('inbox');
             $table->timestamps();
         });
     }
