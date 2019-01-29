@@ -86,3 +86,12 @@
     border: none;
     cursor: pointer;
   }
+
+  #alert{
+    display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-top: 10px;
+  }

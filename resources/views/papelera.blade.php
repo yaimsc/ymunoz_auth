@@ -24,13 +24,13 @@
 <div class="container">
   <div class="table-responsive">
     @if(Session::has('borrado'))
-    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-danger') }}" class="alert-dismissible fade show">
-      <div>{{ Session::get('borrado') }}</div>
+    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-danger') }}">
+      <div>{{ Session::get('borrado') }}</div><i class="fa fa-times" onclick="cerrar()"></i>
     </div>
     @endif
     @if(Session::has('borradoTotal'))
-    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-danger') }}" class="alert-dismissible fade show">
-      <div>{{ Session::get('borradoTotal') }}</div>
+    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-danger') }}">
+      <div>{{ Session::get('borradoTotal') }}</div><i class="fa fa-times" onclick="cerrar()"></i>
     </div>
     @endif
     <table class="table">

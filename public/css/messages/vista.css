@@ -35,6 +35,15 @@ p{
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.file{
+  display: flex;
+  justify-content: flex-end;
+}
+#file{
+  background-color: lightgrey;
+  text-align: right;
+  width: 25%;
+}
 
 .fa{
   color: #007BFF;

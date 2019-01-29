@@ -20,6 +20,18 @@
             </div>
 		</div>
 		<div class="form-group row">
+			<label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('Usuario') }}</label>
+			<div class="col-md-6">
+								@if(Auth::user()->rol_id == 1)
+                <input id="text" type="text" class="form-control" name="email" value="normal" required autofocus disabled>
+								@elseif(Auth::user()->rol_id == 3)
+								<input id="text" type="text" class="form-control" name="email" value="premium" required autofocus disabled>
+								@else
+								<input id="text" type="text" class="form-control" name="email" value="admin" required autofocus disabled>
+								@endif
+            </div>
+		</div>
+		<div class="form-group row">
 			<div class="col-sm-6 col-form-label text-md-right"></div>
 			<div class="col-md-6">
 				<input type="submit" class="btn btn-primary" name="enviar" value="Editar">

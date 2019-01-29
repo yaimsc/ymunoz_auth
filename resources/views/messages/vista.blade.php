@@ -21,5 +21,8 @@
     <div class="message">
       <p>{{$message->message}}</p>
     </div>
+    <div class="file">
+      <p id="file">{{$message->file}}</p>
+    </div>
     <a href="/messages"><i class="fa fa-arrow-left fa-2x"></i></a>
   </div>

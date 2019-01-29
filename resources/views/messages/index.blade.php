@@ -14,8 +14,8 @@
   </div>
   <div class="table-responsive">
     @if(Session::has('papelera'))
-    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-warning') }} alert-dismissible fade show">
-      <div>{{ Session::get('papelera') }}</div>
+    <div id="alert" class="alert {{ Session::get('alert-class', 'alert-warning') }}">
+      <div>{{ Session::get('papelera') }}</div><i class="fa fa-times" onclick="cerrar()"></i>
     </div>
     @endif
     <table class="table" id="recibidos">
@@ -114,5 +114,6 @@
     document.getElementById("linkRecibidos").classList.remove("msg");
     document.getElementById("linkRecibidos").classList.add("msgPrss");
   }
+
 </script>
 @endsection
