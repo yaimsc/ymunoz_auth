@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Message;
+use Auth;
 
 class PapeleraController extends Controller
 {
@@ -14,7 +15,7 @@ class PapeleraController extends Controller
      */
     public function index()
     {
-      $messagesPapelera = Message::where('in', 'papelera')->orderBy('created_at', 'DESC')->get();
+      $messagesPapelera = Message::where('in', 'papelera')->where('to', Auth::user()->email)->orWhere('from', Auth::user()->email)->orderBy('created_at', 'DESC')->get();
       return view('papelera', ['messagesPapelera' => $messagesPapelera]);
     }
 
@@ -24,10 +25,11 @@ class PapeleraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
       $messagePapelera = Message::where('id', $id)->delete();
-      return back()->with('borrado', 'Se ha borrado el mensaje definitivamente.');
+      $request->session()->flash('borrado', 'Se ha borrado el mensaje definitivamente.');
+      // return back()->with('borrado', 'Se ha borrado el mensaje definitivamente.');
       return redirect()->route('papelera.index');
     }
 
@@ -38,7 +40,8 @@ class PapeleraController extends Controller
 
     public function deleteall(){
       $messagesPapelera = Message::where('in', 'papelera')->delete();
-      return back()->with('borradoTotal', 'Se han borrado todos los mensajes de la papelera.'); 
+      $request->session()->flash('borradoTotal', 'Se han borrado todos los mensajes de la papelera.');
+      //return back()->with('borradoTotal', 'Se han borrado todos los mensajes de la papelera.');
       return redirect()->route('papelera.index');
 
     }
