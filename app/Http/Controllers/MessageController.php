@@ -130,13 +130,16 @@ class MessageController extends Controller
     //   return view('papelera', ['message' => $message]);
     // }
 
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
       $papelera = 'papelera';
       $messagePapelera = Message::find($id);
       $messagePapelera->in = $papelera;
       $messagePapelera->save();
-      return back()->with('papelera', 'Se ha borrado el mensaje de la entrada. Lo encontrará en la papelera.');
-      return redirect()->action('PapeleraController@index');
+      $request->session()->flash('papelera', 'Se ha borrado el mensaje de la entrada. Lo encontrará en la papelera.');
+      // return back()->with('papelera', 'Se ha borrado el mensaje de la entrada. Lo encontrará en la papelera.');
+      // return redirect()->action('PapeleraController@index');
+      return back();
+
     }
 }
