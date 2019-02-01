@@ -49,6 +49,9 @@ class MessageController extends Controller
   //validate
   $request->validate([
     'to' => 'required|email',
+    'title' => 'nullable',
+    'message' => 'nullable',
+    'file' => 'nullable|max:10000'
   ]);
   //pillar datos del message
   $message = new Message;

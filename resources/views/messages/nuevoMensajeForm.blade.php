@@ -25,7 +25,7 @@
     <div class="form-group row">
 			<label for="para" class="col-sm-4 col-form-label text-md-right">{{ __('Para') }}</label>
 			<div class="col-md-6">
-        <input name="to" type="email" class="form-control" value="" autofocus>
+        <input name="to" type="text" class="form-control" value="" autofocus>
       </div>
 		</div>
     <div class="form-group row">
