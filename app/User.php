@@ -31,7 +31,7 @@ class User extends Authenticatable
     //relation
 
     public function rols(){
-      $this->belongsToMany('App\Rol');
+      return $this->belongsToMany('App\Rol');
     }
 
 }

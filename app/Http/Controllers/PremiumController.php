@@ -14,14 +14,13 @@ class PremiumController extends Controller
 
     public function index(){
       $user = User::where('id', Auth::user()->id)->first();
-      dd($user); 
       return view ('premium', ['user' => $user]);
 
     }
 
     public function unirse(){
       $user = User::where('id', Auth::user()->id)->first();
-      $user->rol->id = 3;
+      $user->rols()->attach(3); 
       $user->save();
       return view ('home');
     }
