@@ -30,8 +30,8 @@ class User extends Authenticatable
 
     //relation
 
-    public function rol(){
-      $this->belongsTo('App\Rol');
+    public function rols(){
+      $this->belongsToMany('App\Rol');
     }
 
 }
