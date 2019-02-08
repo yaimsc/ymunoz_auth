@@ -15,13 +15,13 @@
   </div>
 
   @foreach($user->rols as $rol)
-      @if($rol->id == 1)
+      @if($rol->id != 3)
       <form action="{{ route('premium.unirse')}}" method="post">
         @csrf
         <input type="submit" name="submit" value="UNETE">
       </form>
-      @elseif($rol->id == 3)
-      <p>Ya eres premium!</p>
+      @else
+        <p>Ya eres premium! </p>
       @endif
   @endforeach
 </div>

@@ -24,13 +24,15 @@
 
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mr-auto">
-              @if(Auth::user()->rol_id == 2)
+              @foreach(Auth::user()->rols as $rol)
+              @if($rol->id == 2)
               <li id="initial" class="nav-item active">
                   <a class="nav-link" href="{{route('admin.index')}}">
                       Panel Administrador
                   </a>
               </li>
-              @else
+              @endif
+              @endforeach
                 <li id="initial" class="nav-item active">
                     <a class="nav-link" href="{{route('messages.index')}}">
                         Mensajes
@@ -51,7 +53,6 @@
                         Premium
                     </a>
                 </li>
-                @endif
             </ul>
     @endguest
 

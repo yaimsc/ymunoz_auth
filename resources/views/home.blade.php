@@ -15,7 +15,7 @@
                     @endif
 
                     Bienvenido {{ Auth::user()->name }}
-                    @if(Auth::user()->rol_id == 3)
+                    <!-- @if(Auth::user()->rol_id == 3)
                       <div>
                         Ya eres premium!
                       </div>
@@ -23,7 +23,11 @@
                       <div>
                         Eres Adminstrador!
                       </div>
-                    @endif
+                    @endif -->
+                    Tienes los siguientes roles:
+                    @foreach(Auth::user()->rols as $rol)
+                      {{$rol->nombre}}
+                    @endforeach
                 </div>
             </div>
         </div>

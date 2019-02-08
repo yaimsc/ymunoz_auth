@@ -20,7 +20,8 @@ class PremiumController extends Controller
 
     public function unirse(){
       $user = User::where('id', Auth::user()->id)->first();
-      $user->rols()->attach(3); 
+      $user->rols()->detach(3); 
+      $user->rols()->attach(3);
       $user->save();
       return view ('home');
     }

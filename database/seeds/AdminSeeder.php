@@ -12,6 +12,7 @@ class AdminSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
+          'id' => '1',
           'name' => 'Admin',
           'email' => 'admin@admin.com',
           'password' => '$2y$10$qOEXC04N8ItVZ8gy.Uq/guJPh.LTJ/SFIV1KaJBuKll3fobphiM6O', //contraseña es 123456
